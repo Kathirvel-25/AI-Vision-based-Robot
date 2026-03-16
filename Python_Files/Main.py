@@ -47,7 +47,14 @@ while True:
                lmlist[20][2] > lmlist[18][2] and\
                lmlist[4][1] > lmlist[3][1]:
                 
-                command = 'T'
+                command = 'L'
+          elif dis < 35 and lmlist[8][2] < lmlist[6][2] and \
+               lmlist[12][2] < lmlist[10][2] and\
+               lmlist[16][2] < lmlist[14][2] and\
+               lmlist[20][2] > lmlist[18][2] and\
+               lmlist[4][2] > lmlist[3][2]:
+
+                    command = 'R'
 
           if command != pre_command and command is not None:
                sr.write(command.encode())
