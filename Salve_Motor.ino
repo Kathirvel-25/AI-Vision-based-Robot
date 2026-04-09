@@ -26,25 +26,36 @@ void setup() {
 
 void MotorMove(){
   
-  analogWrite(ENA, 80);
-  analogWrite(ENB, 80);
+  analogWrite(ENA, 70);
+  analogWrite(ENB, 70);
 
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
 
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 void left() {
-  analogWrite(ENA, 80);
-  analogWrite(ENB, 80);
+  analogWrite(ENA, 70);
+  analogWrite(ENB, 70);
 
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);  
 
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);   
+}
+
+void Right(){
+  analogWrite(ENA,70);
+  analogWrite(ENB,70);
+
+  digitalWrite(IN1,HIGH);
+  digitalWrite(IN2, LOW);
+
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 void stopMotors() {
@@ -70,8 +81,11 @@ void loop() {
     if(data == 'S'){
       stopMotors();
     }
-    if(data == 'T'){
+    if(data == 'L'){
       left();
+    }
+    if (data == 'R'){
+      Right();
     }      
   }
 }
